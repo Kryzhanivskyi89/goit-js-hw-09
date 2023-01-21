@@ -7,9 +7,9 @@ const refs = {
 };
 refs.sudmitBtn.addEventListener('click', (event) => {
   event.preventDefault();  
-  for (let i = 1; i <= refs.amount; i += 1) {
+  for (let i = 1; i <= refs.amount.value; i += 1) {
     let position = i;
-    let delay = refs.firstDelay;       
+    let delay = refs.firstDelay.value;       
     console.log(delay)
     console.log(position)
     createPromise(position, delay)   
@@ -19,7 +19,7 @@ refs.sudmitBtn.addEventListener('click', (event) => {
       .catch(({ position, delay }) => {
         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
       });    
-      delay += refs.delayStep;
+      delay += refs.delayStep.value;
   };    
 })
 function createPromise(position, delay) {
