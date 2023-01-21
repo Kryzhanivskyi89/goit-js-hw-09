@@ -9,9 +9,6 @@ const changeColor = {
   isActive: false,
            
   start() {
-    // if (isActive) {
-    //   return;
-    // };
     this.isActive = true;
     this.intervalId = setInterval(() => {
       refs.body.style.backgroundColor = getRandomHexColor();
@@ -20,7 +17,7 @@ const changeColor = {
 
   stop() {
     clearInterval(this.intervalId); 
-    this.isActive = false;
+    this.isActive = false;   
   }
 
 }

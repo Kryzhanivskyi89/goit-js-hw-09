@@ -31,21 +31,18 @@ const timer = {
       const startTime = new Date;      
       const deltaTime = targetTime.selectedDates[0] - startTime;
       const time = convertMs(deltaTime);
-      updateClockFace(time)      
-    }, 1000);
-    if (targetTime.selectedDates[0] <= startTime) {
+
+      if (targetTime.selectedDates[0] <= startTime) {
        clearInterval(this.intervalId);
       this.isActive = false;
       return window.alert("Please choose a date in the future")
-    };    
-    const deltaTime = targetTime.selectedDates[0] - startTime;
-    function stopInterval() {
-      if ( deltaTime < 0) {
+    };  
+      if ( deltaTime <= 1000) {
         clearInterval(this.intervalId);        
-        this.isActive = false;
+        this.isActive = false;        
       };
-    };     
-    stopInterval();
+      updateClockFace(time)      
+    }, 1000);
   }, 
 };
 
