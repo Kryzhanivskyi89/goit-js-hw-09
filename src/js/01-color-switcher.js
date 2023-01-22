@@ -8,7 +8,7 @@ const changeColor = {
   intervalId: null,
   isActive: false,
   start() {
-    isActive = true;
+    // isActive = true;
     intervalId = setInterval(() => {
       refs.body.style.backgroundColor = getRandomHexColor();
     }, 1000)
